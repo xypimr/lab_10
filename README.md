@@ -1,24 +1,28 @@
 * Laboratory work X
-Данная лабораторная работа посвещена изучению процесса создания и конфигурирования виртуальной среды разработки с использованием Vagrant*
+Данная лабораторная работа посвещена изучению процесса создания и конфигурирования виртуальной среды разработки с использованием Vagrant
+```
 $ open https://www.vagrantup.com/intro/index.html
-
-Tasks
+```
+* Tasks
 	•	1. Ознакомиться со ссылками учебного материала
 	•	2. Выполнить инструкцию учебного материала
 	•	3. Составить отчет и отправить ссылку личным сообщением в Slack
 
-Tutorial
+* Tutorial
+```
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ export PACKAGE_MANAGER=<пакетный_менеджер>
 $ cd ${GITHUB_USERNAME}/workspace
 $ ${PACKAGE_MANAGER} install vagrant
 $ vagrant version
-$ vagrant init bento/ubuntu-19.10	
+$ vagrant init bento/ubuntu-19.10
+```
 Это инициализирует текущий каталог как среду Vagrant, создавая начальный файл Vagrant, если он еще не существует.
 
 Если указан первый аргумент, он предварительно заполнит параметр config.vm.box в созданном Vagrantfile.
 
 Если задан второй аргумент, он предварительно заполнит параметр config.vm.box_url в созданном Vagrantfile.
+```
 $ less Vagrantfile
 $ vagrant init -f -m bento/ubuntu-19.10
 --force — если указано, эта команда перезапишет любой существующий Vagrantfile.
@@ -109,8 +113,9 @@ $ vagrant plugin install vagrant-vmware-esxi
 Это устанавливает плагин с заданным именем или путем к файлу. Если имя не является путем к файлу, то плагин устанавливается из удаленных репозиториев, обычно RubyGems. Эта команда также обновит плагин, если он уже установлен, но для этого вы также можете использовать бродячее обновление плагина.
 $ vagrant plugin list
 $ vagrant up --provider=vmware_esxi
-
-Report
+```
+* Report
+```
 $ cd ~/workspace/
 $ export LAB_NUMBER=10
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER}.git tasks/lab${LAB_NUMBER}
@@ -119,3 +124,4 @@ $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
 $ cd reports/lab${LAB_NUMBER}
 $ edit REPORT.md
 $ gist REPORT.md
+```
